@@ -2,6 +2,7 @@
 src/
 taskHM.txt
 .vscode
+.gitignore
 
 # Logs
 logs
