@@ -1,6 +1,7 @@
 #some file
 src/
 taskHM.txt
+.vscode
 
 # Logs
 logs
