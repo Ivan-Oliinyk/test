@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 40px;
+}
+
+.header,
+.nav-container__nav,
+.main__content,
+.main__aside,
+.footer {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 38px;
+  border: 2px solid black;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__content,
+.main__aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.main__content {
+  min-width: calc(70% - 10px);
+  margin-right: 10px;
+}
+
+.main__aside {
+  min-width: 30%;
+}
+
+.footer {
+  margin-bottom: 0;
+}
