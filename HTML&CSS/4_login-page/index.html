@@ -8,30 +8,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form class="form" method="GET">
+    <form action="#" class="form">
       <label>
         <span>Ваш аватар</span>
-        <input type="file" name="avatar" />
+        <input accept=".png" type="file" name="avatar" required />
       </label>
       <label>
         <span>Введите ваше имя</span>
-        <input type="text" name="first-name" />
+        <input type="text" name="first-name" required />
       </label>
       <label>
         <span>Введите вашу фамилию</span>
-        <input type="text" name="last-name" />
+        <input type="text" name="last-name" required />
       </label>
       <label>
         <span>Сколько вам полных лет ?</span>
-        <input type="number" name="number" />
+        <input type="number" name="number" required />
       </label>
       <label>
         <span>Введите ваш телефон</span>
-        <input type="tel" name="phone" />
+        <input type="tel" name="phone" required />
       </label>
       <label>
         <span>Введите ваш email</span>
-        <input type="email" name="mail" />
+        <input type="email" name="mail" required />
       </label>
 
       <button type="submit">Отправить</button>
