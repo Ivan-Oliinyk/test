@@ -86,29 +86,68 @@
 // }
 
 //**** solution ****/
-// const arr = [
-//   ["name", "developer"],
-//   ["age", 5],
-//   [
-//     "skills",
-//     [
-//       ["html", 4],
-//       ["css", 5],
-//       ["js", 5],
-//     ],
-//   ],
-// ];
+const arr = [
+  ["name", "developer"],
+  ["age", 5],
+  [
+    "skills",
+    [
+      ["html", 4],
+      ["css", 5],
+      ["js", 5],
+    ],
+  ],
+];
 
-// function arrayToObject(arr) {
-//   return Array.isArray(arr)
-//     ? arr.reduce(
-//         (obj, el) => (el && (obj[el[0]] = arrayToObject(el[1])), obj),
-//         {}
-//       )
-//     : arr;
-// }
+function arrayToObject(arr) {
+  return Array.isArray(arr)
+    ? arr.reduce(
+        (obj, el) => (el && (obj[el[0]] = arrayToObject(el[1])), obj),
+        {}
+      )
+    : arr;
+}
 
 // console.log(arrayToObject(arr));
+
+//task7///////////////////////////////////////////////////////////////////////////////
+// 7. Написать обратный метод(см. задачу 5) objectToArray который из объекта создаст массив. Пример:
+
+//   objectToArray({
+// 	name: 'developer',
+// 	age: 5,
+// 	skills: {
+// 		html: 4,
+// 		css: 5,
+// 		js: 5
+// 	}
+// })
+
+// Outputs: [['name', 'developer'], ['age', 5], ['skills', [['html',4], ['css', 5], ['js',5]]]]
+
+const obj = {
+  name: "developer",
+  age: 5,
+  skills: {
+    html: 4,
+    css: 5,
+    js: 5,
+  },
+};
+
+const objectToArray = (obj) => {
+  const arr = [];
+
+  for (let key in obj) {
+    !(typeof obj[key] === "object")
+      ? arr.push([key, obj[key]])
+      : arr.push([key, objectToArray(obj[key])]);
+  }
+
+  return arr;
+};
+
+console.log(objectToArray(obj));
 
 // task8**********************************************************************************
 // 8. Сделать функцию которая сможет делать срез данных с ассоциативного массива и вернуть средние значение (округленное до 2 цифр после запятой).
@@ -211,22 +250,22 @@
 // x.removeDuplicate()
 // Int32 Double
 
-let x =
-  "Int32 Int32 Int32 Int32 Int32 Int32 Int32 Int32 Int32 Double Double Double";
+// let x =
+//   "Int32 Int32 Int32 Int32 Int32 Int32 Int32 Int32 Int32 Double Double Double";
 
-if (!String.prototype.removeDuplicate) {
-  String.prototype.removeDuplicate = function () {
-    const arrStr = this.split(" ");
-    const newArrStr = [];
+// if (!String.prototype.removeDuplicate) {
+//   String.prototype.removeDuplicate = function () {
+//     const arrStr = this.split(" ");
+//     const newArrStr = [];
 
-    for (let el of arrStr) {
-      if (!newArrStr.includes(el)) {
-        newArrStr.push(el);
-      }
-    }
+//     for (let el of arrStr) {
+//       if (!newArrStr.includes(el)) {
+//         newArrStr.push(el);
+//       }
+//     }
 
-    return newArrStr.join(" ");
-  };
-}
+//     return newArrStr.join(" ");
+//   };
+// }
 
-console.log(x.removeDuplicate());
+// console.log(x.removeDuplicate());
