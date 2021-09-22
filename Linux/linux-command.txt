@@ -1,0 +1,14 @@
+1) ls -d var/www/html/*/
+	
+2) sed -i '/^$/d' var/www/html/logs/error.txt
+
+3) ls var/www/html/images/*.jpg
+   	
+4) for f in var/www/html/logs/*txt; do mv -- "$f" "${f%.txt}.log"; done
+
+5) chown www-data:www-data var/www/html/images
+
+6) sed -i 'd' var/www/html/logs/access.txt
+
+7) find var/www/html/images/ -size +2M
+	
